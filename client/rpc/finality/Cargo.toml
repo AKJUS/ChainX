@@ -10,7 +10,7 @@ futures = { version = "0.3", features = [ "compat" ] }
 jsonrpc-core = "18.0.0"
 jsonrpc-derive = "18.0.0"
 parity-scale-codec = "3.0.0"
-tokio = { version = "1.12.0", features = [ "sync", "time" ] }
+tokio = { version = "1.26.0", features = [ "sync", "time" ] }
 
 fc-db = { git = "https://github.com/chainx-org/frontier", branch = "polkadot-v0.9.18-btc-fix2" }
 fc-rpc = { git = "https://github.com/chainx-org/frontier", branch = "polkadot-v0.9.18-btc-fix2" }
