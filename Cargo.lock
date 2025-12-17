@@ -401,7 +401,7 @@ dependencies = [
 
 [[package]]
 name = "bevm-finality-rpc"
-version = "5.2.2"
+version = "5.2.4"
 dependencies = [
  "fc-db",
  "fc-rpc",
@@ -787,14 +787,14 @@ dependencies = [
 
 [[package]]
 name = "chainx"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-cli",
 ]
 
 [[package]]
 name = "chainx-cli"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-executor",
  "chainx-primitives",
@@ -850,7 +850,7 @@ dependencies = [
 
 [[package]]
 name = "chainx-executor"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-runtime",
  "dev-runtime",
@@ -862,7 +862,7 @@ dependencies = [
 
 [[package]]
 name = "chainx-primitives"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "frame-system",
  "parity-scale-codec",
@@ -876,7 +876,7 @@ dependencies = [
 
 [[package]]
 name = "chainx-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "bevm-finality-rpc",
  "chainx-primitives",
@@ -937,11 +937,12 @@ dependencies = [
 
 [[package]]
 name = "chainx-runtime"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "chainx-runtime-common",
  "fp-evm",
+ "fp-rent",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking",
@@ -969,6 +970,7 @@ dependencies = [
  "pallet-evm-precompile-modexp",
  "pallet-evm-precompile-sha3fips",
  "pallet-evm-precompile-simple",
+ "pallet-evm-rent",
  "pallet-grandpa",
  "pallet-identity",
  "pallet-im-online",
@@ -1055,7 +1057,7 @@ dependencies = [
 
 [[package]]
 name = "chainx-service"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-executor",
  "chainx-primitives",
@@ -1568,11 +1570,12 @@ dependencies = [
 
 [[package]]
 name = "dev-runtime"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "chainx-runtime-common",
  "fp-evm",
+ "fp-rent",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking",
@@ -1600,6 +1603,7 @@ dependencies = [
  "pallet-evm-precompile-modexp",
  "pallet-evm-precompile-sha3fips",
  "pallet-evm-precompile-simple",
+ "pallet-evm-rent",
  "pallet-grandpa",
  "pallet-identity",
  "pallet-im-online",
@@ -2064,7 +2068,7 @@ dependencies = [
 [[package]]
 name = "fc-consensus"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "async-trait",
  "fc-db",
@@ -2083,7 +2087,7 @@ dependencies = [
 [[package]]
 name = "fc-db"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-storage",
  "kvdb-rocksdb",
@@ -2097,7 +2101,7 @@ dependencies = [
 [[package]]
 name = "fc-mapping-sync"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fc-db",
  "fp-consensus",
@@ -2114,7 +2118,7 @@ dependencies = [
 [[package]]
 name = "fc-rpc"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "ethereum",
  "ethereum-types",
@@ -2156,7 +2160,7 @@ dependencies = [
 [[package]]
 name = "fc-rpc-core"
 version = "1.1.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "ethereum",
  "ethereum-types",
@@ -2263,7 +2267,7 @@ dependencies = [
 [[package]]
 name = "fp-consensus"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "ethereum",
  "parity-scale-codec",
@@ -2275,7 +2279,7 @@ dependencies = [
 [[package]]
 name = "fp-evm"
 version = "3.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "evm",
  "parity-scale-codec",
@@ -2285,9 +2289,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "fp-rent"
+version = "2.0.0-dev"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
+dependencies = [
+ "sp-core",
+]
+
+[[package]]
 name = "fp-rpc"
 version = "3.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "ethereum",
  "ethereum-types",
@@ -2304,7 +2316,7 @@ dependencies = [
 [[package]]
 name = "fp-self-contained"
 version = "1.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "ethereum",
  "frame-support",
@@ -2320,7 +2332,7 @@ dependencies = [
 [[package]]
 name = "fp-storage"
 version = "2.0.0"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "parity-scale-codec",
 ]
@@ -4548,11 +4560,12 @@ dependencies = [
 
 [[package]]
 name = "malan-runtime"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "chainx-runtime-common",
  "fp-evm",
+ "fp-rent",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking",
@@ -4580,6 +4593,7 @@ dependencies = [
  "pallet-evm-precompile-modexp",
  "pallet-evm-precompile-sha3fips",
  "pallet-evm-precompile-simple",
+ "pallet-evm-rent",
  "pallet-grandpa",
  "pallet-identity",
  "pallet-im-online",
@@ -5296,7 +5310,7 @@ dependencies = [
 [[package]]
 name = "pallet-base-fee"
 version = "1.0.0"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -5378,13 +5392,14 @@ dependencies = [
 [[package]]
 name = "pallet-ethereum"
 version = "4.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "ethereum",
  "ethereum-types",
  "evm",
  "fp-consensus",
  "fp-evm",
+ "fp-rent",
  "fp-rpc",
  "fp-self-contained",
  "fp-storage",
@@ -5407,10 +5422,11 @@ dependencies = [
 [[package]]
 name = "pallet-evm"
 version = "6.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "evm",
  "fp-evm",
+ "fp-rent",
  "frame-benchmarking",
  "frame-support",
  "frame-system",
@@ -5433,7 +5449,7 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-blake2"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-evm",
 ]
@@ -5441,7 +5457,7 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-bn128"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-evm",
  "sp-core",
@@ -5451,7 +5467,7 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-dispatch"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-evm",
  "frame-support",
@@ -5461,7 +5477,7 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-modexp"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-evm",
  "num",
@@ -5470,7 +5486,7 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-sha3fips"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-evm",
  "tiny-keccak",
@@ -5479,11 +5495,27 @@ dependencies = [
 [[package]]
 name = "pallet-evm-precompile-simple"
 version = "2.0.0-dev"
-source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#f42dbeb4013f239c07f99add4bd14b5cbe79eb58"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
 dependencies = [
  "fp-evm",
  "ripemd",
  "sp-io",
+]
+
+[[package]]
+name = "pallet-evm-rent"
+version = "1.0.0"
+source = "git+https://github.com/chainx-org/frontier?branch=polkadot-v0.9.18-btc-fix2#3925a4d27bb30310212c86d2ced940b789cbc406"
+dependencies = [
+ "fp-rent",
+ "frame-support",
+ "frame-system",
+ "pallet-timestamp",
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "sp-core",
+ "sp-runtime",
 ]
 
 [[package]]
@@ -9432,7 +9464,7 @@ dependencies = [
  "chrono",
  "lazy_static",
  "matchers",
- "parking_lot 0.11.2",
+ "parking_lot 0.10.2",
  "regex",
  "serde",
  "serde_json",
@@ -10287,7 +10319,7 @@ dependencies = [
 
 [[package]]
 name = "xp-assets-registrar"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "impl-trait-for-tuples",
@@ -10300,7 +10332,7 @@ dependencies = [
 
 [[package]]
 name = "xp-gateway-bitcoin"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "frame-support",
@@ -10317,7 +10349,7 @@ dependencies = [
 
 [[package]]
 name = "xp-gateway-common"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "bs58 0.3.1",
  "frame-support",
@@ -10330,7 +10362,7 @@ dependencies = [
 
 [[package]]
 name = "xp-genesis-builder"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "serde",
@@ -10339,7 +10371,7 @@ dependencies = [
 
 [[package]]
 name = "xp-io"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "hex",
  "parity-scale-codec",
@@ -10350,7 +10382,7 @@ dependencies = [
 
 [[package]]
 name = "xp-mining-common"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "sp-arithmetic",
@@ -10359,7 +10391,7 @@ dependencies = [
 
 [[package]]
 name = "xp-mining-staking"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "sp-runtime",
@@ -10369,7 +10401,7 @@ dependencies = [
 
 [[package]]
 name = "xp-protocol"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "parity-scale-codec",
@@ -10380,7 +10412,7 @@ dependencies = [
 
 [[package]]
 name = "xp-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "hex",
  "jsonrpc-core",
@@ -10390,7 +10422,7 @@ dependencies = [
 
 [[package]]
 name = "xp-runtime"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "fp-rpc",
  "hex",
@@ -10405,7 +10437,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-assets"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "bitflags",
  "chainx-primitives",
@@ -10428,7 +10460,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-assets-bridge"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "ethabi",
@@ -10451,7 +10483,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-assets-registrar"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "frame-benchmarking",
@@ -10473,7 +10505,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-assets-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10488,7 +10520,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-assets-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "parity-scale-codec",
@@ -10499,7 +10531,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-btc-ledger"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "frame-benchmarking",
  "frame-support",
@@ -10514,7 +10546,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-btc-ledger-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10529,7 +10561,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-btc-ledger-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "parity-scale-codec",
  "sp-api",
@@ -10538,7 +10570,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-dex-spot"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "env_logger 0.7.1",
@@ -10562,7 +10594,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-dex-spot-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10578,7 +10610,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-dex-spot-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "parity-scale-codec",
  "sp-api",
@@ -10599,7 +10631,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-bitcoin"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "bs58 0.3.1",
  "chainx-primitives",
@@ -10638,7 +10670,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-bitcoin-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "hex",
  "jsonrpc-core",
@@ -10655,7 +10687,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-bitcoin-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "parity-scale-codec",
@@ -10669,7 +10701,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-common"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "frame-benchmarking",
@@ -10707,7 +10739,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-common-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "hex",
  "jsonrpc-core",
@@ -10724,7 +10756,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-common-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "parity-scale-codec",
@@ -10740,7 +10772,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-records"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "frame-benchmarking",
@@ -10763,7 +10795,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-records-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10779,7 +10811,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-gateway-records-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "parity-scale-codec",
@@ -10791,7 +10823,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-genesis-builder"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "frame-support",
@@ -10812,7 +10844,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-mining-asset"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "env_logger 0.7.1",
@@ -10841,7 +10873,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-mining-asset-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10856,7 +10888,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-mining-asset-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "parity-scale-codec",
@@ -10867,7 +10899,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-mining-staking"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "chainx-primitives",
  "frame-benchmarking",
@@ -10897,7 +10929,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-mining-staking-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10912,7 +10944,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-mining-staking-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "parity-scale-codec",
  "sp-api",
@@ -10922,7 +10954,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-support"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "hex",
  "sp-std",
@@ -10930,7 +10962,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-system"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -10944,7 +10976,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-transaction-fee"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -10958,7 +10990,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-transaction-fee-rpc"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "jsonrpc-core",
  "jsonrpc-core-client",
@@ -10976,7 +11008,7 @@ dependencies = [
 
 [[package]]
 name = "xpallet-transaction-fee-rpc-runtime-api"
-version = "5.2.3"
+version = "5.2.4"
 dependencies = [
  "parity-scale-codec",
  "sp-api",

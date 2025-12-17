@@ -125,7 +125,7 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
     spec_name: create_runtime_str!("chainx"),
     impl_name: create_runtime_str!("chainx-dev"),
     authoring_version: 1,
-    spec_version: 34,
+    spec_version: 36,
     impl_version: 1,
     apis: RUNTIME_API_VERSIONS,
     transaction_version: 7,
@@ -1163,6 +1163,7 @@ impl pallet_evm::Config for Runtime {
     type OnChargeTransaction = pallet_evm::EVMCurrencyAdapter<XBtcLedger, DealWithBTCFees>;
     type BlockGasLimit = BlockGasLimit;
     type FindAuthor = ();
+    type EvmRentCalculator = EvmRent;
     type WeightInfo = pallet_evm::weights::SubstrateWeight<Self>;
 }
 
@@ -1205,6 +1206,12 @@ impl xpallet_assets_bridge::Config for Runtime {
     type Event = Event;
     type EvmCaller = EvmCaller;
     type ClaimBond = ClaimBond;
+}
+
+impl pallet_evm_rent::Config for Runtime {
+    type Event = Event;
+    type CouncilOrigin =
+        pallet_collective::EnsureProportionAtLeast<AccountId, CouncilCollective, 2, 3>;
 }
 
 construct_runtime!(
@@ -1288,6 +1295,7 @@ construct_runtime!(
         XAssetsBridge: xpallet_assets_bridge::{Pallet, Call, Storage, Config<T>, Event<T>} = 45,
 
         XBtcLedger: xpallet_btc_ledger::{Pallet, Call, Storage, Config<T>, Event<T>} = 46,
+        EvmRent: pallet_evm_rent::{Pallet, Call, Storage, Event<T>} = 47,
     }
 );
 
@@ -1329,24 +1337,7 @@ pub type Executive = frame_executive::Executive<
     frame_system::ChainContext<Runtime>,
     Runtime,
     AllPalletsWithSystem,
-    AssetsBridgeMigration,
 >;
-
-pub struct AssetsBridgeMigration;
-impl OnRuntimeUpgrade for AssetsBridgeMigration {
-    fn on_runtime_upgrade() -> Weight {
-        use frame_support::storage::migration;
-
-        frame_support::log::info!("🔍️ AssetsBridgeMigration start");
-
-        // Remove the storage value `HotAccount` from  pallet `XAssetsBridge`
-        migration::remove_storage_prefix(b"XAssetsBridge", b"HotAccount", b"");
-
-        frame_support::log::info!("🚀 AssetsBridgeMigration end");
-
-        <Runtime as frame_system::Config>::DbWeight::get().writes(1)
-    }
-}
 
 pub struct TransactionConverter;
 impl fp_rpc::ConvertTransaction<UncheckedExtrinsic> for TransactionConverter {
